@@ -1,6 +1,11 @@
 <?php
 use App\Http\Controllers;
 use App\Http\Controllers\TinhToanController;
+use App\Http\Controllers\dienTich;
+
+use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\APIController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,13 +29,26 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/welcome',function(){
 //     return "Chào mừng bạn đã đến với PNV";
 // });
-Route::get('/dienTich',[App\Http\Controllers\dienTich::class,'computeArea']);
-Route::post('/dienTich',[App\Http\Controllers\dienTich::class,'computeArea']);
+// Route::get('/dienTich',[dienTich::class,'computeArea']);
+// Route::post('/dienTich',[dienTich::class,'computeArea']);
 
-Route::get('/tinhToan',[TinhToanController::class, 'index']);
-Route::post('/tinhToan',[TinhToanController::class, 'tong']);
+// Route::get('/tinhToan',[TinhToanController::class, 'index']);
+// Route::post('/tinhToan',[TinhToanController::class, 'tong']);
+// Route::get('/hienThiAPI', [APIController::class, 'covidByContinent']);
 
-Route::get('/', [App\Http\Controllers\UserController::class, 'xinchao']);
+Route::get('/hienThi', [App\Http\Controllers\FormController::class, 'index']);
+Route::post('/hienThi', [App\Http\Controllers\FormController::class, 'submitForm']);
+
+Route::get('/rooms/create', [App\Http\Controllers\roomController::class, 'create']);
+// Thêm dòng dưới đây vào
+Route::post('/rooms/create', [App\Http\Controllers\roomController::class, 'store']);
+
+
+Route::get('index',['as'=>'trang-chu','user'=>'PageController@getIndex']);
+
+
+// Route::get('/hienThiAPI', [ApiController::class, 'getData']);
+
 // Route::get('/',[PageController::class,'getContact'])->name('add-product'); // đặt tên định danh
 // Route::get('/',[PageController::class,'getContact']);
 ?>

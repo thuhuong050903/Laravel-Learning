@@ -90,12 +90,21 @@
         <label for="address">Address:</label>
         <input type="text" name="address" class="form-control" id="address" placeholder="Enter address">
     </div>
+    <div>
+    @include ('error')
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
 <div>
-    @include error
+    @if  (isset ($info))
+    <p>Name: {{$info['name']}}</p>
+    <p>Name: {{$info['age']}}</p>
+    <p>Name: {{$info['date']}}</p>
+    <p>Name: {{$info['phone']}}</p>
+    <p>Name: {{$info['web']}}</p>
+    <p>Name: {{$info['address']}}</p>
 </div>
+
 </body>
 
 </html>
