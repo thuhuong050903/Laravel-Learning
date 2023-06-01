@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/typeproduct/{id}',[App\Http\Controllers\PageController::class,'getLoaiSp']);
 
 Route::get('/slide',[App\Http\Controllers\PageController::class, 'getIndex']);
+Route::get('/detail/{id}',[App\Http\Controllers\PageController::class, 'getDetail']);
