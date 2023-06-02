@@ -1,6 +1,12 @@
 @extends('master')
 @section('content')
-
+<div>
+    {{-- @php
+    $gio = gmdate('H', time() + 3600 * 7);
+    @endphp
+    @if ($gio < 12) Chào Buổi sáng @elseif ($gio < 18) Chào buổi chiều @else chào buổi tối @endif @php $ngay=date('d/m/Y'); $thu=date('N'); switch ($thu) { case 1: $chuoi_thu='Thứ 2' ; break; case 2: $chuoi_thu='Thứ 3' ; break; case 3: $chuoi_thu='Thứ 4' ; break; case 4: $chuoi_thu='Thứ 5' ; break; case 5: $chuoi_thu='Thứ 6' ; break; case 6: $chuoi_thu='Thứ 7' ; break; default: $chuoi_thu='Chủ nhật' ; break; } @endphp <div>
+        Hôm nay là {{ $chuoi_thu }}, ngày {{ $ngay }} --}}
+</div>
 
 <div class="grid">
     @for ($i = 1; $i <= 9; $i++) <div class="box">
@@ -47,8 +53,7 @@
                             <p class="pull-left">Tìm thấy {{ count($new_product_array) }} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
-
-                        <div class="row">
+<div class="row">
                             @foreach ($new_product_array as $pr)
                             <div class="col-sm-3">
                                 <div class="single-item">
@@ -93,7 +98,7 @@
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="detail/{{$tp->id}}"><img src="source/image/product/{{ $tp->image }}" alt=""></a>
+<a href="detail/{{$tp->id}}"><img src="source/image/product/{{ $tp->image }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $tp->name }}</p>

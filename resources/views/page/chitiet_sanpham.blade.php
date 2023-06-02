@@ -1,7 +1,6 @@
 @extends('master')
 @section('content')
 </html>
-<h1 class="quan">quan</h1>
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">

@@ -22,7 +22,7 @@
         <div class="col-sm-3">
           <ul class="aside-menu">
             @foreach($type_product as $l)
-            <li><a href="/type/{{$l->id}}">{{$l->name}}</a></li>
+            <li><a href="/typeproduct/{{$l->id}}">{{$l->name}}</a></li>
             @endforeach
           </ul>
         </div>
@@ -60,7 +60,7 @@
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
                     <a class="add-to-cart pull-left" href="#"><i class="fa fa-heart"></i></a>
-                    <a class="beta-btn primary" href="/type/{{$sp->id}}">Details <i class="fa fa-chevron-right"></i></a>
+                    <a class="beta-btn primary" href="/detail/{{$sp->id}}">Details <i class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
